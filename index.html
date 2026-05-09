@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тихий Фокус</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="screen hero" aria-labelledby="pageTitle">
+      <div class="intro reveal">
+        <h1 id="pageTitle">Тихий фокус</h1>
+        <p>25 минут внимания, мягкий сигнал и короткая пауза.</p>
+      </div>
+
+      <div class="timer-panel reveal" aria-label="Pomodoro timer">
+        <div class="modes" aria-label="Режим таймера">
+          <button class="mode-btn active" data-mode="focus">Фокус</button>
+          <button class="mode-btn" data-mode="short">5 мин</button>
+          <button class="mode-btn" data-mode="long">15 мин</button>
+        </div>
+
+        <div class="timer">
+          <span id="modeName">Фокус</span>
+          <h2 id="time">25:00</h2>
+        </div>
+
+        <div class="controls">
+          <button id="resetBtn" class="round-btn secondary-btn">Сброс</button>
+          <button id="startBtn" class="round-btn primary-btn">Старт</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen about" aria-labelledby="aboutTitle">
+      <div class="reveal">
+        <h2 id="aboutTitle">Тихий Фокус</h2>
+        <p>
+          Таймер помогает держать спокойный рабочий цикл без лишнего визуального шума:
+          выбрать режим, сфокусироваться на одной задаче, услышать мягкое завершение
+          и вовремя перейти к короткому восстановлению.
+        </p>
+      </div>
+    </section>
+
+    <aside class="timer-status" id="timerStatus" aria-live="polite">
+      <span class="status-dot"></span>
+      <span class="status-copy">
+        <small id="timerStatusLabel">Состояние</small>
+        <strong id="timerStatusText">Готов</strong>
+      </span>
+    </aside>
+
+    <div class="rest-suggestion hidden" id="restSuggestion" role="dialog" aria-modal="true" aria-labelledby="suggestionTitle">
+      <div class="suggestion-box">
+        <p id="suggestionTitle">Фокус завершен</p>
+        <h2>Короткий отдых?</h2>
+        <div class="suggestion-actions">
+          <button id="skipRestBtn">Позже</button>
+          <button id="startRestBtn">Начать 5 мин</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mode-confirm hidden" id="modeConfirm" role="dialog" aria-modal="true" aria-labelledby="modeConfirmTitle">
+      <div class="confirm-box">
+        <h2 id="modeConfirmTitle">Вы действительно хотите перейти в другой режим?</h2>
+        <div class="confirm-actions">
+          <button id="cancelModeSwitchBtn">Остаться</button>
+          <button id="confirmModeSwitchBtn">Перейти</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
